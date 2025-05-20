@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E2A2A"
+    android:padding="24dp">
+
+    <!-- Barre du haut avec bouton back et logo -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="#FFFFFF"
+            android:contentDescription="@string/back_button_desc" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/logoIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_lotus"
+            app:tint="#FFFFFF"
+            android:contentDescription="@string/logo_desc" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <!-- Pour équilibrer le layout, espace vide -->
+        <View
+            android:layout_width="32dp"
+            android:layout_height="32dp" />
+    </LinearLayout>
+
+    <!-- Bloc principal : titre, description, bouton -->
+    <LinearLayout
+        android:id="@+id/mainBlock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:layout_below="@id/topBar"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:clipToOutline="true"
+        android:backgroundTint="#7E9E94"
+        android:background="@drawable/rounded_corners">
+
+        <TextView
+            android:id="@+id/mainTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/mainDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textColor="#D0D0D0"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/listenNowButton"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="listen now"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1E2A2A"
+            android:drawableEnd="@drawable/ic_play"
+            android:drawablePadding="8dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+
+    <!-- Liste d’items en dessous -->
+    <LinearLayout
+        android:id="@+id/itemList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_below="@id/mainBlock"
+        android:layout_marginTop="24dp">
+
+        <ImageView
+            android:id="@+id/itemImage"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:contentDescription="@string/item_image_desc"
+            android:src="@drawable/ic_placeholder_image"
+            android:scaleType="centerCrop"
+            android:clipToOutline="true"
+            android:backgroundTint="#7E9E94"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/rounded_corners" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/itemTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/itemSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 Listening"
+                android:textColor="#B0B0B0"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/itemDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 Min"
+            android:textColor="#B0B0B0"
+            android:textSize="12sp" />
+    </LinearLayout>
+</RelativeLayout>

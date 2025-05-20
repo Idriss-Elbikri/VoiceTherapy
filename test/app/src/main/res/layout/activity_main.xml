@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#1E2A2A"
+    android:padding="24dp">
+
+    <!-- Menu hamburger en haut à gauche -->
+    <ImageView
+        android:id="@+id/menuIcon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_menu_hamburger"
+        app:tint="#FFFFFF"
+        android:contentDescription="@string/menu_icon_desc"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="8dp" />
+
+    <!-- Logo lotus centré en haut -->
+    <ImageView
+        android:id="@+id/logoIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_lotus"
+        app:tint="#FFFFFF"
+        android:contentDescription="@string/logo_desc"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp" />
+
+    <!-- Texte de bienvenue -->
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome back, User!"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_below="@id/logoIcon"
+        android:layout_marginTop="24dp" />
+
+    <!-- Sous-texte -->
+    <TextView
+        android:id="@+id/howFeelingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How are you feeling today ?"
+        android:textColor="#B0B0B0"
+        android:textSize="14sp"
+        android:layout_below="@id/welcomeText"
+        android:layout_marginTop="8dp" />
+
+    <!-- Card pour démarrer enregistrement -->
+    <RelativeLayout
+        android:id="@+id/recordCard"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_below="@id/howFeelingText"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/record_card_bg"
+        android:padding="16dp"
+        android:elevation="4dp"
+        android:clipToOutline="true">
+
+        <TextView
+            android:id="@+id/recordNowText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start recording Now"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/recordNowButton"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="record now"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#7E9E94"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:drawableEnd="@drawable/ic_play"
+            android:drawablePadding="8dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp" />
+    </RelativeLayout>
+
+    <!-- Barre d'icônes en bas -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="3"
+        android:background="#1E2A2A">
+
+        <ImageButton
+            android:id="@+id/homeIcon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_spiral"
+            app:tint="#FFFFFF"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/home_icon_desc" />
+
+        <ImageButton
+            android:id="@+id/musicIcon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_music_note"
+            app:tint="#FFFFFF"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/music_icon_desc" />
+
+        <ImageButton
+            android:id="@+id/profileIcon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_person"
+            app:tint="#FFFFFF"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/profile_icon_desc" />
+    </LinearLayout>
+</RelativeLayout>
